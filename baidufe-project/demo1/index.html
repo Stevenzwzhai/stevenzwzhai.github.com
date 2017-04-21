@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        .wrap{
+            width:500px;
+            height:400px;
+            border:2px solid blue;
+        }
+        .panel1,.panel2{
+            height:100%;
+        }
+        .panel1{
+            display: block;
+        }
+        .panel2{
+            display: none;
+        }
+        span{
+            display:inline-block;
+        }
+        .header{
+            height:30%;
+            text-align:center;
+            padding-top:10%;
+        }
+        .content{
+            height:70%;
+            width:100%;
+            padding-top:10%;
+            display:flex;
+            display:-webkit-flex;
+            /*排列方向，
+                row（默认值）：主轴为水平方向，起点在左端。
+                row-reverse：主轴为水平方向，起点在右端。
+                column：主轴为垂直方向，起点在上沿。
+                column-reverse：主轴为垂直方向，起点在下沿。*/
+            flex-direction:row;
+            /*一行放不下，如何换行，
+                nowrap(默认)不换行
+                wrap：换行，第一行在上
+                wrap-reverse:换行，第一行在下
+            */
+            flex-wrap:wrap;
+            /*flex-direction和flex-wrap的简写， 默认 row nowrap*/
+            /*flex-flow:*/
+            /*内容对其方式
+                flex-start（默认值）：左对齐
+                flex-end：右对齐
+                center： 居中
+                space-between：两端对齐，项目之间的间隔都相等。
+                space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+            */
+            justify-content:space-between;
+            /*
+                项目在交叉轴对其方式，也就是内容高度不同时，在垂直方向采用什么样的对其方式
+                flex-start：交叉轴的起点对齐。最上
+                flex-end：交叉轴的终点对齐。最下
+                center：交叉轴的中点对齐。 中间
+                baseline: 项目的第一行文字的基线对齐。 文字线
+                stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+            */
+            align-items:flex-start;
+            /*多根轴线的对齐方式
+                flex-start：与交叉轴的起点对齐。
+                flex-end：与交叉轴的终点对齐。
+                center：与交叉轴的中点对齐。
+                space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+                space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+                stretch（默认值）：轴线占满整个交叉轴。
+            */
+            align-content:flex-start;
+            /*定义在项目上的
+            order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+            flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+            flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+            flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+            flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+            align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+            该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
+            */
+        }
+        .content span{
+            width:30%;
+            border:1px solid blue;
+            text-align:center;
+            padding:10% 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="panel1" id="page1">
+            <div class="header">
+                <span>请出拳吧，少年！</span>
+                <span></span>
+            </div>
+            <div id="punch" class="content">
+                <span data-type="rock">石头</span>
+                <span data-type="scissors">剪刀</span>
+                <span data-type="paper">布</span>
+            </div>
+        </div>
+        <div class="panel2" id="page2"></div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
