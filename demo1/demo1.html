@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<select name="province" id="province">
+			<option value="" z-repeat="item in LocalList">${item.region.name}</option>
+		</select>
+		<select name="citys" id="citys">
+			<option value="" z-repeat="item in state">${item.name}</option>
+		</select>
+	
+		<select name="district" id="district">
+			<option value="" z-repeat="item in city">${item.name}</option>
+		</select>
+	<script src="compile.js"></script>
+	<script>
+		const oProvince = document.getElementById('province');
+		const oCity = document.getElementById('citys');
+		const oDistrict = document.getElementById('district');
+		let dataList = [];
+		let provinceRender = null;
+		let cityRender = null;
+		let districtRender = null;
+		fetch('./data.json').then((res) => {
+			// console.log(res.json());
+			return res.json();
+			// document.write(LocalList);
+		}).then((json) => {
+			dataList = json.LocalList;
+			provinceRender = new Compile(oProvince, json);
+			provinceRender.render();
+			cityRender = new Compile(oCity, json.LocalList[0].region);
+			cityRender.render();
+			districtRender = new Compile(oDistrict, json.LocalList[0].region.state[0]);
+			districtRender.render();
+		})
+
+		const computed = (data) => {
+
+		}
+
+		oProvince.addEventListener('change', (e) => {
+			console.log(oProvince.value);
+			cityRender.refresh(dataList[+oProvince.value].region);
+			districtRender.refresh(dataList[+oProvince.value].region.state[0]);
+		})
+
+		oCity.addEventListener('change', (e) => {
+			districtRender.refresh(dataList[+oProvince.value].region.state[+oCity.value]);
+		})
+
+
+		oDistrict.addEventListener('change', (e) => {
+			console.log(oDistrict.value);
+		})
+
+	</script>
+</body>
+</html>
