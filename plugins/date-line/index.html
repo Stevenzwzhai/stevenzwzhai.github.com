@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>date-line</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        #container{
+            width:500px;
+            height:800px;
+            border:1px solid#ccc;
+            
+        }
+        .lineY{
+            height:700px;
+            width:0px;
+            border:2px solid #aaa;
+        }
+        ul{
+            width:100px;
+            text-align: right;
+            margin-right:10px;
+        }
+        li{
+            position:relative;
+            height:20px;
+            line-height: 20px;
+            margin:10px 0;
+            cursor:pointer;
+        }
+        li::after{
+            display:inline-block;
+            content:"";
+            position:absolute;
+            border:4px solid #000;
+            border-radius: 4px;
+            top:8px;
+            right:-16px;
+        }
+        .box{
+            position:absolute;
+            border:1px solid #aaa;
+            width: 120px;
+            border: 1px solid #bbaaee;
+            height:270px;
+            overflow:hidden;
+            display:flex;
+            flex-direction: row;
+        }
+        .lineX{
+            position:absolute;
+            border:1px solid #aaa;
+            width: 100%;
+            top: 142px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+        <div class="box">
+            <ul>
+            </ul>
+            <div class="lineY"></div>
+        </div>
+        <div class="lineX"></div>
+    </div>
+    <script>
+        let oUl = document.getElementsByTagName('ul')[0];
+        //设定一个当前选中事件，默认为当前月
+        let currentDate = new Date();
+        //存储当前时间列表
+        let dateList=[];
+        /*
+            currentDate:当前事件
+            len：要显示的个数
+            offset：初始偏移量
+        
+        */
+        function createUl(currentDate, len, offset){
+            if(Math.abs(len)<1){
+                throw new Error('数量不能为0');
+            }
+            len = 2*Math.abs(len)-1;
+            let dateArray = new Array();
+            let currentIndex = 0;
+            //9个月
+            for(let i=0;i<Math.abs(len);i++){
+                
+                dateArray[i] = format(new Date(new Date(currentDate).setMonth(currentDate.getMonth()-(8-i))));
+            }
+            function format(date){
+                dateList.push(date);
+                return `${date.getFullYear()}年${(date.getMonth()+1)>9?(date.getMonth()+1):'0'+(date.getMonth()+1)}月`;
+            }
+            //使用文档碎片
+            const fragment = document.createDocumentFragment();
+            
+            for(let item of dateArray){
+                let oLi = document.createElement('li')
+                oLi.setAttribute('index', currentIndex);
+                oLi.innerHTML = item;
+                fragment.appendChild(oLi);
+                currentIndex++;
+            }
+            oUl.innerHTML = "";
+            oUl.appendChild(fragment);
+            //渲染完成后将ul移动到原始位置
+            oUl.style.webkitTransform = `translate(0,${30*offset}px)`;
+        }
+        createUl(currentDate, -9, Math.ceil(-9/2));
+        oUl.addEventListener('click', (event) => {
+            let index = event.target.getAttribute('index');
+            //点击到非li区域不做响应
+            if(!index){
+                return;
+            }
+            //将点击的时间设置为选中时间
+            currentDate = dateList[+index];
+            dateList = [];
+            //避免初始化位置的时候也产生动画，先设置为空，再异步添加
+            oUl.style.transition = "";
+            createUl(currentDate, -9, index-8+Math.ceil(-9/2));
+            setTimeout(() => {
+                oUl.style.transition = "all .3s ease-in 0s";
+            }, 0)
+            setTimeout(() => {
+                //选中时间始终在最中间
+                oUl.style.webkitTransform = `translate(0,${30*Math.ceil(-9/2)}px)`;
+            }, 100)
+        })
+    </script>
+</body>
+</html>
