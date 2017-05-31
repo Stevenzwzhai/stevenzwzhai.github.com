@@ -1,0 +1,13 @@
+{
+  "name":"zhihu-daily",
+  "short_name":"zh-daily",
+  "start_url":".",
+  "background_color":"#359DDA",
+  "display": "standalone",
+  "description":"a simple zhihu-daily pwa",
+  "icons":[{
+    "src":"./logo.jpg",
+    "sizes":"300x300",
+    "type":"image/jpg"
+  }]
+}

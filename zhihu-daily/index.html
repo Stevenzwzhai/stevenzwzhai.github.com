@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="manifest" href="manifest.json">
+	    <title>zhihu-daily</title>
+  	</head>
+  	<body>
+    	<div id="app"></div>
+    	<script src="./dist/build.js"></script>
+    	<script>
+    		if(navigator.serviceWorker != null){
+    			navigator.serviceWorker.register('sw.js').then((registration) => {
+    				console.log(`registration events at scope: ${registration.scope}`)
+    			})
+    		}
+    	</script>
+  	</body>
+</html>
