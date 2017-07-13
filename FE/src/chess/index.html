@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chess</title>
+	<style>
+		body{
+			position:relative;
+		}
+		.chess{
+			border:4px solid #ccc;
+			display:block;
+			margin:20px auto;
+			background-color:#aaaaaa;
+		}
+		.chessA{
+			display:block;
+			position:absolute;
+			padding:0px;
+			box-sizing:border-box;
+			top:0px;
+			left:50%;
+			transform:translateX(-50%);
+			background-color:transparent;
+		}
+		.command{
+			text-align: center;
+		}
+		.command button{
+			margin-left:15px;
+		}
+	</style>
+</head>
+<body>
+
+<canvas id="chess" class="chess" width="640" height="640"></canvas>
+<canvas id="chessA" class="chessA" width="640" height="640"></canvas>
+<div class="command">
+	<button id="reset">重新开始</button>
+	<button id="back">悔棋</button>
+	<button id="reback">取消悔棋</button>
+	<button id="changeRole">人机</button>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

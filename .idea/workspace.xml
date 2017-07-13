@@ -2,7 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd1b9a73-e8c5-4154-81bf-317ee4475657" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FE" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/league-gothic/league-gothic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/league-gothic/league-gothic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/league-gothic/league-gothic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-semibold.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-semibold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-semibold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-semibolditalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-semibolditalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro-semibolditalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/src/a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/src/audio.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/src/b.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/examples/assets/image1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/examples/assets/image2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/Gruntfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/print/paper.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/print/pdf.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/reveal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/reveal.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/beige.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/black.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/blood.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/league.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/moon.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/night.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/serif.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/simple.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/sky.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/solarized.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/beige.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/black.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/blood.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/league.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/moon.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/night.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/serif.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/simple.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/sky.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/solarized.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/source/white.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/template/mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/template/settings.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/template/theme.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/css/theme/white.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/js/reveal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/css/zenburn.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/league-gothic/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/league-gothic/league-gothic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/font/source-sans-pro/source-sans-pro.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/js/classList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/js/head.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/lib/js/html5shiv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/highlight/highlight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/markdown/example.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/markdown/example.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/markdown/markdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/markdown/marked.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/math/math.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/multiplex/client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/multiplex/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/multiplex/master.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/multiplex/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/notes-server/client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/notes-server/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/notes-server/notes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/notes/notes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/notes/notes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/print-pdf/print-pdf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/search/search.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/plugin/zoom-js/zoom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/src/chess/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/src/chess/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/examples/barebones.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/examples/embedded-media.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/examples/math.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/examples/slide-backgrounds.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/examples/slide-transitions.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/qunit-1.12.0.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/qunit-1.12.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-markdown-element-attributes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-markdown-element-attributes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-markdown-slide-attributes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-markdown-slide-attributes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-markdown.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-markdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-pdf.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test-pdf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FE/test/test.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="stevenzwzhai.github.com.iws" />
@@ -27,8 +131,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhihu-daily/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state relative-caret-position="240">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -152,6 +256,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stevenzwzhai.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stevenzwzhai.github.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -234,7 +352,7 @@
       <option name="presentableId" value="Default" />
       <updated>1497327574538</updated>
       <workItem from="1497327575751" duration="2232000" />
-      <workItem from="1499860674174" duration="2990000" />
+      <workItem from="1499860674174" duration="3437000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1499861262131</created>
@@ -243,17 +361,24 @@
       <option name="project" value="LOCAL" />
       <updated>1499861262131</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="111">
+      <created>1499908918057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1499908918057</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5222000" />
+    <option name="totallyTimeSpent" value="5669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -315,14 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhihu-daily/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FE/css/print/pdf.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -359,6 +476,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhihu-daily/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding />
         </state>
       </provider>
