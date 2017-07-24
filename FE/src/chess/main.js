@@ -24,7 +24,7 @@ let isBack = false;
 //已经落子的位置集合
 let chessArr = [];
 
-
+//每种赢法人或者电脑落子数量，如果有别的落子则加10，表示这种赢法不可能赢
 let peopleWin = [],
 	computerWin = [];
 //可以赢的方式
