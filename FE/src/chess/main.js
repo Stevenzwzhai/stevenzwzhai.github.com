@@ -112,6 +112,10 @@ const computerStep = () => {
 	let maxScore = 0;
 	let currentX = 0;
 	let currentY = 0;
+	//重置悔棋部分
+	isBack = false;
+	pOne = [];
+	pTwo = [];
 	//在该坐标点落子胜利的期望值
 	for(let i = 0; i<15; i++){
 		peopleScore[i] = [];
@@ -202,6 +206,10 @@ oChess.addEventListener('click', (event) => {
 			return;
 		}
 	}
+	//重置悔棋部分
+	isBack = false;
+	pOne = [];
+	pTwo = [];
 	let x = Math.floor(event.offsetX/40),
 		y = Math.floor(event.offsetY/40);
 	if(chessArr[x][y] == 0){
