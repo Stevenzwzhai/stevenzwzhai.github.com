@@ -433,12 +433,11 @@ oReset.addEventListener('click', (event) => {
 })
 
 function resetDomChess(){
-    let childs = Array.from(oDContainer.childNodes).filter(node => node.nodeType === 3).slice(1);
+    let childs = Array.from(oDContainer.childNodes).filter(node => node.nodeType === 1).slice(1);
     console.log('clear dom')
     childs.forEach(node => {
         oDContainer.removeChild(node)
     })
-    console.log(oDContainer.children)
 }
 
 //切换角色
