@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chess</title>
+    <style type="text/css">
+        body{
+            position:relative;
+        }
+        .c-chess{
+            border:4px solid #ccc;
+            display:block;
+            margin:20px auto;
+            background-color:#aaaaaa;
+        }
+        .c-chessA{
+            display:block;
+            position:absolute;
+            padding:0px;
+            box-sizing:border-box;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            background-color:transparent;
+        }
+        .d-container{
+            width:640px;
+            height:640px;
+            margin:20px auto;
+            background-color: #ccc;
+            padding:20px;
+            position:relative;
+            box-sizing: border-box;
+            display:none;
+        }   
+        .d-chess{
+            font-size: 0;
+            width: 600px;
+            height: 600px;
+            padding:0px;
+            top:50%;
+            left:50%;
+            position:absolute;
+            transform:translate(-50%, -50%);
+            border-right:1px solid #000;
+            border-bottom:1px solid #000;
+            background-color: #aaa;
+        }
+        .d-chess span{
+            width:40px;
+            height:40px;
+            display: inline-block;
+            box-sizing: border-box;
+            border-left:1px solid #000;
+            border-top:1px solid #000;
+        }
+        .d-chessman{
+            height:40px;
+            width:40px;
+            display:inline-block;
+            position: absolute;
+            border-radius: 20px;
+            background-color: white;
+            border:1px solid #000;
+            box-sizing: border-box; 
+        }
+        .command{
+            text-align: center;
+        }
+        .command button{
+            margin-left:15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d-container" class="d-container">
+        <div id="d-chess" class="d-chess"></div>
+    </div>
+    <div id="c-container" class="c-container">
+        <canvas id="c-chess" class="c-chess" width="640" height="640"></canvas>
+        <canvas id="c-chessA" class="c-chessA" width="640" height="640"></canvas>
+    </div>
+    <div class="info">
+        版本：
+        <span id="version">canvas</span>
+        模式：
+        <span id="mode">人机</span>
+    </div>
+    <div class="command">
+        <button type="button" id="version-type">切换版本</button>
+        <button type="button" id="reset">重新开始</button>
+        <button type="button" id="back">悔棋</button>
+        <button type="button" id="reback">取消悔棋</button>
+        <button type="button" id="changeRole">模式</button>
+    </div>
+<script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
