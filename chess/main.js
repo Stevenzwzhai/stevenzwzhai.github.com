@@ -53,15 +53,15 @@ let peopleWin = [],
 let canWin = [];
 //可以赢的种类数量
 let winCount = 0;
-for(let i = 0; i< 15; i++){
+for(let i = 0; i< 16; i++){
     canWin[i] = [];
-    for(let j = 0; j<15; j++){
+    for(let j = 0; j<16; j++){
         canWin[i][j] = [];
     }
 }
 //横线赢的方式
-for(let i = 0; i<15;i++){
-    for(let j = 0;j<11; j++){
+for(let i = 0; i<16;i++){
+    for(let j = 0;j<12; j++){
         //连成五个子
         for(let k = 0; k<5; k++){
             canWin[i][j+k][winCount] = true;
@@ -70,8 +70,8 @@ for(let i = 0; i<15;i++){
     }
 }
 //竖线赢的方式
-for(let i = 0; i<11;i++){
-    for(let j = 0;j<15; j++){
+for(let i = 0; i<12;i++){
+    for(let j = 0;j<16; j++){
         //连成五个子
         for(let k = 0; k<5; k++){
             canWin[i+k][j][winCount] = true;
@@ -80,8 +80,8 @@ for(let i = 0; i<11;i++){
     }
 }
 //正斜线赢的方式
-for(let i = 0; i<11;i++){
-    for(let j = 0;j<11; j++){
+for(let i = 0; i<12;i++){
+    for(let j = 0;j<12; j++){
         //连成五个子
         for(let k = 0; k<5; k++){
             canWin[i+k][j+k][winCount] = true;
@@ -90,8 +90,8 @@ for(let i = 0; i<11;i++){
     }
 }
 //反斜线赢的方式
-for(let i = 0; i<11;i++){
-    for(let j = 14;j>3; j--){
+for(let i = 0; i<12;i++){
+    for(let j = 15;j>3; j--){
         //连成五个子
         for(let k = 0; k<5; k++){
             canWin[i+k][j-k][winCount] = true;
@@ -134,7 +134,7 @@ const drawChessman = (x, y, temp) => {
         chessMan.className = "d-chessman";
         chessMan.setAttribute('id', x+''+y);
         chessMan.style.cssText = `
-            top:${(y+1)*40}px;
+            top:${y*40}px;
             left:${x*40}px;
             background-color: ${bg};
         `;
@@ -159,16 +159,16 @@ const computerStep = () => {
     let currentY = 0;
 
     //在该坐标点落子胜利的期望值
-    for(let i = 0; i<15; i++){
+    for(let i = 0; i<16; i++){
         peopleScore[i] = [];
         computerScore[i] = [];
-        for(let j = 0; j<15; j++){
+        for(let j = 0; j<16; j++){
             peopleScore[i][j] = 0;
             computerScore[i][j] = 0;
         }
     }
-    for(let i = 0; i<15; i++){
-        for(let j = 0; j<15; j++){
+    for(let i = 0; i<16; i++){
+        for(let j = 0; j<16; j++){
             //还未落子
             if(chessArr[i][j] == 0){
                 for(let k = 0;k<winCount;k++){
@@ -253,8 +253,8 @@ function peopleStep(event){
         }
     }
     if(versionType!=='canvas'){
-        var x = Math.floor((event.pageX-event.offsetX)/40),
-        y = Math.floor((event.pageY-event.offsetY)/40)-1;
+        var x = Math.floor((event.pageX-oDContainer.offsetLeft)/40),
+        y = Math.floor((event.pageY-20)/40);
         
     }else{
         var x = Math.floor(event.offsetX/40),
@@ -420,9 +420,9 @@ oReset.addEventListener('click', (event) => {
         peopleWin[i] = 0;
         computerWin[i] = 0;
     }
-    for(let i = 0;i<15;i++){
+    for(let i = 0;i<16;i++){
         chessArr[i] = [];
-        for(let j = 0;j<15;j++){
+        for(let j = 0;j<16;j++){
             chessArr[i][j] = 0;
         }
     }
