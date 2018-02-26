@@ -178,6 +178,9 @@ const computerStep = () => {
 	}
 	drawChessman(currentX, currentY, false);
 	// currentComputer = [currentX, currentY];
+	if(!pTwo[0]){
+		pTwo[0] = [];
+	}
 	pTwo[0].push([currentX, currentY]);
 	chessArr[currentX][currentY] = 2;
 	for(let i = 0; i<winCount; i++){
@@ -217,8 +220,14 @@ oChess.addEventListener('click', (event) => {
 		// currentPeople = [x, y];
 		//只有当前是人对人而且不是第一个人下棋才赋值
 		if(isp2p && !isMan){
+			if(!pTwo[0]){
+				pTwo[0] = [];
+			}
 			pTwo[0].push([x,y]);
 		}else{
+			if(!pOne[0]){
+				pOne[0] = [];
+			}
 			pOne[0].push([x, y]);
 		}
 		chessArr[x][y] =  1;
