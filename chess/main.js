@@ -443,7 +443,7 @@ function resetDomChess(){
 //切换角色
 oChangeRole.addEventListener('click', (event) => {
     isp2p = !isp2p;
-    modeDom.innerHTML = isp2p ? "人机" : "人对人";
+    modeDom.innerHTML = isp2p ? "人对人" : "人机";
     oReset.click();
 });
 
