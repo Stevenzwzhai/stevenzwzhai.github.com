@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>move</title>
+    <style type="text/css">
+        #container{
+            height:400px;
+            width: 400px;
+            position:relative;
+            border: 1px solid #ccc;
+        }
+        .move{
+            left:150px;
+            top: 150px;
+            height:100px;
+            width:100px;
+            position: absolute;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="move red" id="red"></div>
+    <div class="move green" id="green"></div>
+</div>
+<script type="text/javascript">
+    var oCon = document.getElementById('container'); 
+    var oRed = document.getElementById('red'); 
+    var oGreen = document.getElementById('green');
+    function getPos(ev){
+        return {x: ev.clientX-200, y: ev.clientY-200};     
+    }
+
+    oCon.addEventListener('mousemove', function(ev){
+        var oDiv=document.getElementById('div1');
+        var oEvent=ev||event;
+
+        var pos=getPos(oEvent); 
+        if(Math.abs(pos.x)>50){
+            oGreen.style.left = (pos.x > 0 ? 200 : 100) - pos.x  +'px';
+        }else{
+            oGreen.style.left = '150px';
+        }
+        if(Math.abs(pos.y)>50){
+            oGreen.style.top = (pos.y > 0 ? 200 : 100) - pos.y  +'px';
+        }else{
+            oGreen.style.top = '150px';
+        }
+        console.log(pos)
+    }, false)
+</script>
+</body>
+</html>
