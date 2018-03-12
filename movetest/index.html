@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>move</title>
+    <style type="text/css">
+        canvas{
+            border:1px solid #ccc;
+        }
+        .line{
+            height:2px;
+            background-color: #ccc;
+            position: relative;
+            margin-top: 30px;
+        }
+        .bar{
+            display: inline-block;
+            position:absolute;
+            height:30px;
+            width:10px;
+            background-color: red;
+            margin-top:-13px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="ca" width="400" height="600"></canvas>
+<div class="line" id="line">
+    <span class="bar" id="bar"></span>
+</div>
+<div id="moveOffset"></div>
+<script type="text/javascript">
+    var oCanvas = document.getElementById('ca');
+    var ctx = oCanvas.getContext('2d');
+    function drowBox(){
+        ctx.fillStyle='#FF0000';
+        ctx.fillRect(0,0,100,100);
+        ctx.fillStyle='#00FF00';
+        ctx.fillRect(0,200,100,100);
+    }
+
+    function drowPeople(x, y){
+        ctx.beginPath();
+        ctx.arc(x,y,2,0,2*Math.PI);
+        ctx.stroke();
+    }
+
+    function drowLine(x, y){
+        ctx.moveTo(0,100);
+        ctx.lineTo(x,y);
+        ctx.stroke();
+    }
+    drowBox()
+    drowPeople(50, 500)
+    drowLine(50, 500)
+    var oA = document.getElementById('bar')
+    var moveOffset = document.getElementById('moveOffset');
+    var startX=0, startY=0, offsetX=0, offsetY=0;
+    var canDrag = false;
+    var moveSize = 0;
+    oA.addEventListener('mousedown', function(e){
+        startX = e.pageX;
+        startY = e.pageY;
+        offsetX = oA.offsetLeft;
+        offsetY = oA.offsetTop;
+        canDrag = true;
+        //为了防止快速移动时，拖拽元素无法跟上，这里绑定移动事件直接绑定在document上， 沾满全屏。
+        document.addEventListener('mousemove', move, false)
+    }, false)
+    oA.addEventListener('click', function(e){
+        startX = e.pageX;
+        startY = e.pageY;
+        offsetX = oA.offsetLeft;
+        offsetY = oA.offsetTop;
+        canDrag = true;
+    }, false)
+    //为了能解绑事件。这里的移动函数需要写在外面，解绑的时候还要传
+    function move(e){
+
+        if(!canDrag){
+            return;
+        }
+        newX = e.pageX;
+        newY = e.pageY;
+        oA.style.left = offsetX+newX-startX+"px";
+        ctx.clearRect(0,0,400,600);
+        drowBox()
+        drowPeople(50+offsetX+newX-startX, 500)
+        drowLine(50+offsetX+newX-startX, 500)
+        moveOffset.innerHTML = offsetX+newX-startX
+        // oA.style.top = offsetY+newY-startY+"px";
+    }
+    document.addEventListener('mouseup', function(e){
+        canDrag = false;
+        document.removeEventListener('mousemove', move, false)
+    }, false)
+
+</script>
+</body>
+</html>
