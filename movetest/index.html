@@ -13,11 +13,14 @@
             border: 1px solid #ccc;
         }
         .move{
-            left:150px;
-            top: 150px;
             height:100px;
             width:100px;
             position: absolute;
+            transform: translate3d(150px, 150px, 0);
+            -ms-transform:translate3d(150px, 150px, 0);   
+            -moz-transform:translate3d(150px, 150px, 0); 
+            -webkit-transform:translate3d(150px, 150px, 0);
+            -o-transform:translate3d(150px, 150px, 0);
         }
         .red{
             background-color: red;
@@ -37,42 +40,63 @@
     var oRed = document.getElementById('red'); 
     var oGreen = document.getElementById('green');
     function getPos(ev){
-        return {x: ev.clientX-200, y: ev.clientY-200};     
+        return {x: ev.clientX-200-oCon.offsetLeft, y: ev.clientY-200-oCon.offsetTop};     
+    }
+    function setPos(x, y){
+        oGreen.style.cssText = `
+            transform:translate3d(${x}px, ${y}px, 0);
+            -ms-transform:translate3d(${x}px, ${y}px, 0);   
+            -moz-transform:translate3d(${x}px, ${y}px, 0); 
+            -webkit-transform:translate3d(${x}px, ${y}px, 0);
+            -o-transform:translate3d(${x}px, ${y}px, 0);
+        `;
     }
     function cb(ev){
         var oEvent=ev||event;
         var pos=getPos(oEvent); 
+        var top = 0;
+        var left = 0; 
         if(Math.abs(pos.x)>50){
             if(pos.x>0){
-                oGreen.style.left = 150 - (pos.x - 50)*3/7  +'px';
+                left = 150 - (pos.x - 50)*3/7;
             }else{
-                oGreen.style.left = 150 - (pos.x+50)*3/7  +'px';
+                left = 150 - (pos.x+50)*3/7;
             }
             
         }else{
-            oGreen.style.left = '150px';
+            left = 150;
         }
         if(Math.abs(pos.y)>50){
             if(pos.y>0){
-                oGreen.style.top = 150 - (pos.y - 50)*3/7  +'px';
+                top = 150 - (pos.y - 50)*3/7;
             }else{
-                oGreen.style.top = 150 - (pos.y+50)*3/7  +'px';
+                top = 150 - (pos.y+50)*3/7;
             }
         }else{
-            oGreen.style.top = '150px';
+            top = 150;
         }
+        setPos(left, top);
     }
+    window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame ||
+              window.webkitRequestAnimationFrame ||
+              window.mozRequestAnimationFrame ||
+              function( callback ){
+                window.setTimeout(callback, 1000 / 60);
+              };
+    })();
     oCon.addEventListener('mousemove', function(ev){
-        if (typeof timer === 'number') {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(function () {
-            requestAnimationFrame(function(){
+        window.requestAnimationFrame(function(){
                 cb(ev)
             })
-        }, 16);
         
     }, false)
+    oCon.addEventListener('mouseout', function(ev){
+        setPos(150, 150)
+    }, false)
+    oCon.addEventListener('click', function(e){
+        console.log(e.clientX, oCon.offsetLeft)
+    })
 </script>
 </body>
 </html>
