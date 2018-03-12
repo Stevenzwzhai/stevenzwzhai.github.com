@@ -3,6 +3,9 @@
 <head>
     <title>move</title>
     <style type="text/css">
+        body{
+            margin:0;
+        }
         #container{
             height:400px;
             width: 400px;
@@ -36,23 +39,39 @@
     function getPos(ev){
         return {x: ev.clientX-200, y: ev.clientY-200};     
     }
-
-    oCon.addEventListener('mousemove', function(ev){
-        var oDiv=document.getElementById('div1');
+    function cb(ev){
         var oEvent=ev||event;
-
         var pos=getPos(oEvent); 
         if(Math.abs(pos.x)>50){
-            oGreen.style.left = (pos.x > 0 ? 200 : 100) - pos.x  +'px';
+            if(pos.x>0){
+                oGreen.style.left = 150 - (pos.x - 50)*3/7  +'px';
+            }else{
+                oGreen.style.left = 150 - (pos.x+50)*3/7  +'px';
+            }
+            
         }else{
             oGreen.style.left = '150px';
         }
         if(Math.abs(pos.y)>50){
-            oGreen.style.top = (pos.y > 0 ? 200 : 100) - pos.y  +'px';
+            if(pos.y>0){
+                oGreen.style.top = 150 - (pos.y - 50)*3/7  +'px';
+            }else{
+                oGreen.style.top = 150 - (pos.y+50)*3/7  +'px';
+            }
         }else{
             oGreen.style.top = '150px';
         }
-        console.log(pos)
+    }
+    oCon.addEventListener('mousemove', function(ev){
+        if (typeof timer === 'number') {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function () {
+            requestAnimationFrame(function(){
+                cb(ev)
+            })
+        }, 16);
+        
     }, false)
 </script>
 </body>
