@@ -20,14 +20,17 @@
             background-color: red;
             margin-top:-13px;
         }
+        #moveOffset{
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-<canvas id="ca" width="400" height="600"></canvas>
+<canvas id="ca" width="600" height="600"></canvas>
 <div class="line" id="line">
     <span class="bar" id="bar"></span>
 </div>
-<div id="moveOffset"></div>
+<div id="moveOffset">0</div>
 <script type="text/javascript">
     var oCanvas = document.getElementById('ca');
     var ctx = oCanvas.getContext('2d');
@@ -82,7 +85,7 @@
         newX = e.pageX;
         newY = e.pageY;
         oA.style.left = offsetX+newX-startX+"px";
-        ctx.clearRect(0,0,400,600);
+        ctx.clearRect(0,0,600,600);
         drowBox()
         drowPeople(50+offsetX+newX-startX, 500)
         drowLine(50+offsetX+newX-startX, 500)
