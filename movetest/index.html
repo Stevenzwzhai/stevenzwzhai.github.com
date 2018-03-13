@@ -48,22 +48,23 @@
     function getPos(ev){
         return {x: ev.clientX-200-oCon.offsetLeft, y: ev.clientY-200-oCon.offsetTop};     
     }
-    function setPos(x, y){
+    function setPos(x, y, rx, ry){
         oGreen.style.cssText = `
-            transform:translate3d(${x}px, ${y}px, 0);
-            -ms-transform:translate3d(${x}px, ${y}px, 0);   
-            -moz-transform:translate3d(${x}px, ${y}px, 0); 
-            -webkit-transform:translate3d(${x}px, ${y}px, 0);
-            -o-transform:translate3d(${x}px, ${y}px, 0);
+            transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);
+            -ms-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);   
+            -moz-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg); 
+            -webkit-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);
+            -o-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);
         `;
     }
-    function setRedPos(x, y){
+    function setRedPos(x, y, rx, ry){
+        console.log(rx)
         oRed.style.cssText = `
-            transform:translate3d(${x}px, ${y}px, 0);
-            -ms-transform:translate3d(${x}px, ${y}px, 0);   
-            -moz-transform:translate3d(${x}px, ${y}px, 0); 
-            -webkit-transform:translate3d(${x}px, ${y}px, 0);
-            -o-transform:translate3d(${x}px, ${y}px, 0);
+            transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);
+            -ms-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);   
+            -moz-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg); 
+            -webkit-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);
+            -o-transform:translate3d(${x}px, ${y}px, 0) rotateX(${rx}deg) rotateY(${ry}deg);
         `;
     }
     function cb(ev){
@@ -73,6 +74,10 @@
         var left = 0; 
         var redTop = 0;
         var redLeft = 0;
+        var greeRotateX = 360
+        var greeRotateY = 360
+        var redRotateX = 360
+        var redRotateY = 360
         if(Math.abs(pos.x)>50){
             if(pos.x>0){
                 left = 150 - (pos.x - 50)*3/7;
@@ -86,6 +91,7 @@
             left = 150;
             redLeft = 165;
         }
+
         if(Math.abs(pos.y)>50){
             if(pos.y>0){
                 top = 150 - (pos.y - 50)*3/7;
@@ -98,8 +104,12 @@
             top = 150;
             redTop = 165;
         }
-        setRedPos(redLeft, redTop);
-        setPos(left, top);
+        greeRotateX= 360-(Math.abs(pos.x))/3
+        redRotateX=360-(Math.abs(pos.x))/3
+        greeRotateY= 360-(Math.abs(pos.y))/3
+        redRotateY=360-(Math.abs(pos.y))/3
+        setRedPos(redLeft, redTop, redRotateY, redRotateX);
+        setPos(left, top, greeRotateY, greeRotateX);
     }
     window.requestAnimFrame = (function(){
         return  window.requestAnimationFrame ||
@@ -117,6 +127,7 @@
     }, false)
     oCon.addEventListener('mouseout', function(ev){
         setPos(150, 150)
+        setRedPos(165, 165);
     }, false)
     oCon.addEventListener('click', function(e){
         console.log(e.clientX, oCon.offsetLeft)
