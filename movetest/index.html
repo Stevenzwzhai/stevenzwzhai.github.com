@@ -24,6 +24,12 @@
         }
         .red{
             background-color: red;
+            height:70px;
+            width:70px;
+            transform: translate3d(165px, 165px, 0);
+            -ms-transform:translate3d(165px, 165px, 0);   
+            -moz-transform:translate3d(165px, 165px, 0); 
+            -webkit-transform:translate3d(165px, 165px, 0)
         }
         .green{
             background-color: green;
@@ -51,30 +57,48 @@
             -o-transform:translate3d(${x}px, ${y}px, 0);
         `;
     }
+    function setRedPos(x, y){
+        oRed.style.cssText = `
+            transform:translate3d(${x}px, ${y}px, 0);
+            -ms-transform:translate3d(${x}px, ${y}px, 0);   
+            -moz-transform:translate3d(${x}px, ${y}px, 0); 
+            -webkit-transform:translate3d(${x}px, ${y}px, 0);
+            -o-transform:translate3d(${x}px, ${y}px, 0);
+        `;
+    }
     function cb(ev){
         var oEvent=ev||event;
         var pos=getPos(oEvent); 
         var top = 0;
         var left = 0; 
+        var redTop = 0;
+        var redLeft = 0;
         if(Math.abs(pos.x)>50){
             if(pos.x>0){
                 left = 150 - (pos.x - 50)*3/7;
+                redLeft = 165+(pos.x - 50)*10/7;
             }else{
                 left = 150 - (pos.x+50)*3/7;
+                redLeft = 165 + (pos.x+50)*10/7;
             }
             
         }else{
             left = 150;
+            redLeft = 165;
         }
         if(Math.abs(pos.y)>50){
             if(pos.y>0){
                 top = 150 - (pos.y - 50)*3/7;
+                redTop = 165 + (pos.y - 50)*10/7;
             }else{
                 top = 150 - (pos.y+50)*3/7;
+                redTop = 165 + (pos.y+50)*10/7;
             }
         }else{
             top = 150;
+            redTop = 165;
         }
+        setRedPos(redLeft, redTop);
         setPos(left, top);
     }
     window.requestAnimFrame = (function(){
@@ -94,6 +118,9 @@
     oCon.addEventListener('mouseout', function(ev){
         setPos(150, 150)
     }, false)
+    oCon.addEventListener('click', function(e){
+        console.log(e.clientX, oCon.offsetLeft)
+    })
 </script>
 </body>
 </html>
