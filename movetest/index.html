@@ -104,10 +104,10 @@
             top = 150;
             redTop = 165;
         }
-        greeRotateX= 360-(Math.abs(pos.x))/3
-        redRotateX=360-(Math.abs(pos.x))/3
-        greeRotateY= 360-(Math.abs(pos.y))/3
-        redRotateY=360-(Math.abs(pos.y))/3
+        greeRotateX= 360-pos.x/3
+        redRotateX=360-pos.x/3
+        greeRotateY= 360-pos.y/3
+        redRotateY=360-pos.y/3
         setRedPos(redLeft, redTop, redRotateY, redRotateX);
         setPos(left, top, greeRotateY, greeRotateX);
     }
