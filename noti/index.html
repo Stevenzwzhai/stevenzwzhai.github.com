@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pwa-notification</title>
+</head>
+
+<body>
+    <script src="./notification/index.js"></script>
+    <script type="text/javascript">
+    // var noti = new Notifi();
+    // var notiObj = null
+    // if (noti.check()) {
+    //     noti.getRight(function(right) {
+    //         switch (right) {
+    //             case 'default':
+    //                 ;
+    //                 break;
+    //             case 'granted':
+    //                 notiObj = noti.createNotifi({
+    //                     title: "pwa-test",
+    //                     icon: '../logo.png',
+    //                     body: "this is test project"
+    //                 })
+    //                 break;
+    //             case 'denied':
+    //                 window.alert('some message won\'t show!')
+    //                 break;
+    //         }
+    //         if (notiObj) {
+    //             notiObj.onshow = function() {
+    //                 console.log('notification shows up');
+    //                 //5秒后关闭消息框  
+    //                 setTimeout(function() {
+    //                     notiObj.close();
+    //                 }, 10000);
+    //             };
+    //             //消息框被点击时被调用  
+    //             //可以打开相关的视图，同时关闭该消息框等操作  
+    //             notiObj.onclick = function() {
+    //                 alert('open the associated view');
+    //                 //opening the view...  
+    //                 notiObj.close();
+    //             };
+    //             //当有错误发生时会onerror函数会被调用  
+    //             //如果没有granted授权，创建Notification对象实例时，也会执行onerror函数  
+    //             notiObj.onerror = function() {
+    //                 console.log('notification encounters an error');
+    //             };
+
+    //             //一个消息框关闭时onclose函数会被调用  
+    //             notiObj.onclose = function() {
+    //                 console.log('notification is closed');
+    //             };
+    //         }
+    //     })
+    // }
+    </script>
+    <script type="text/javascript">
+    var endpoint;
+    var key;
+    var authSecret;
+    var NOTIFICATION_HOST = 'https://localhost:3000/api/notification'
+    var vapidPublicKey = 'BAyb_WgaR0L0pODaR7wWkxJi__tWbM1MPBymyRDFEGjtDCWeRYS9EF7yGoCHLdHJi6hikYdg4MuYaK0XoD0qnoY';
+    // 方法很复杂，但是可以不用具体看，知识用来转化vapidPublicKey用
+    function urlBase64ToUint8Array(base64String) {
+        const padding = '='.repeat((4 - base64String.length % 4) % 4);
+        const base64 = (base64String + padding)
+            .replace(/\-/g, '+')
+            .replace(/_/g, '/');
+        const rawData = window.atob(base64);
+        const outputArray = new Uint8Array(rawData.length);
+        for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
+        }
+        return outputArray;
+    }
+    // fetch('http://localhost:3000/api/notification/subscribe', {
+    //     method: 'post',
+    //     mode: 'cors',
+    //     headers: new Headers({
+    //         'content-type': 'application/json'
+    //     }),
+    //     body: JSON.stringify({
+    //         endpoint: endpoint,
+    //         key: key,
+    //         authSecret: authSecret,
+    //     }),
+    // }).then(res => {
+    //     console.log(res)
+    // })
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('https://localhost:3344/node/node-frame/pro/front/sw.js')
+      .then(function (registration) {
+        return registration.pushManager.getSubscription()
+          .then(function(subscription) {
+            // if subscription exit
+            if (subscription) {
+              return
+            }
+
+            // subscribe
+            return registration.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: urlBase64ToUint8Array(vapidPublicKey)
+              })
+              .then(function (subscription) {
+                var rawKey = subscription.getKey ? subscription.getKey('p256dh') : ''
+                var rawAuthSecret = subscription.getKey ? subscription.getKey('auth') : ''
+                key = rawKey ? btoa(String.fromCharCode.apply(null, new Uint8Array(rawKey))) : ''
+                authSecret = rawAuthSecret ? btoa(String.fromCharCode.apply(null, new Uint8Array(rawAuthSecret))) : ''
+                endpoint = subscription.endpoint
+
+                // post user's subscription to server
+                return fetch(NOTIFICATION_HOST + '/subscribe', {
+                            method: 'post',
+                            mode: 'cors',
+                            headers: new Headers({
+                                'content-type': 'application/json'
+                            }),
+                            body: JSON.stringify({
+                                endpoint: endpoint,
+                                key: key,
+                                authSecret: authSecret,
+                            })
+                  })
+                  .then(function (res) {
+                    res.json()
+                      .then(json => {
+                        // save subscription user_id in localstorage for unsubscribe
+                            console.log(json)
+                      })
+                  })
+                  .catch(function (err) {
+                    console.log(err)
+                  })
+              })
+          })
+      })
+      .catch(function (err) {
+        console.log('ServiceWorker registration failed: ', err)
+      })
+    }
+    </script>
+</body>
+
+</html>
