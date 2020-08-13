@@ -1,7 +1,6 @@
-const cacheVersion = "v1";
+const cacheVersion = "v2";
 
 const cacheList = [
-	'/',
 	'./dist/build.js',
 	'./dist/svg/Category.svg',
 	'./dist/svg/add.svg',
