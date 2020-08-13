@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="manifest" href="manifest.json">
-	    <title>zhihu-daily</title>
-  	</head>
-  	<body>
-    	<div id="app"></div>
-    	<script src="./dist/build.js"></script>
-    	<script>
-    		if(navigator.serviceWorker != null){
-    			navigator.serviceWorker.register('sw.js').then((registration) => {
-    				console.log(`registration events at scope: ${registration.scope}`)
-    			})
-    		}
-    	</script>
-  	</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+      var observer = new PerformanceObserver((entryList) => {
+        var entries = entryList.getEntries();
+        var lastEntry = entries[entries.length - 1];
+        var lcp = lastEntry.renderTime || lastEntry.loadTime;
+        console.log('=====>LCP:', lcp);
+        var lcpDiv = document.createElement('div');
+        lcpDiv.innerHTML = 'LCP: ' + lcp;
+        document.body.appendChild(lcpDiv);
+      });
+      observer.observe({entryTypes: ['largest-contentful-paint']});
+      var timer = setTimeout(() => {
+        var performanceDiv = document.createDocumentFragment();
+        window.performance.getEntriesByType('resource').forEach(source => {
+          console.log('performance source====>', source.name, source.responseEnd.toFixed(3));
+          var sourceDiv = document.createElement('div');
+          sourceDiv.innerHTML = source.name + ': ' + source.responseEnd.toFixed(3);
+          performanceDiv.appendChild(sourceDiv);
+        })
+        document.body.appendChild(performanceDiv);
+        console.log(window.performance.getEntriesByType('resource'))
+        clearTimeout(timer);
+      }, 5000);
+    </script>
+    <title>zhihu-daily</title>
+    <style>
+      body{
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./dist/build.js"></script>
+  </body>
 </html>
