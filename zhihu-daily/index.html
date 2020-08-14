@@ -38,5 +38,12 @@
   <body>
     <div id="app"></div>
     <script src="./dist/build.js"></script>
+    <script>
+      if(navigator.serviceWorker != null){
+        navigator.serviceWorker.register('sw.js').then((registration) => {
+          console.log(`registration events at scope: ${registration.scope}`)
+        })
+      }
+    </script>
   </body>
 </html>
