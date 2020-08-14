@@ -18,7 +18,7 @@
       var timer = setTimeout(() => {
         var performanceDiv = document.createDocumentFragment();
         window.performance.getEntriesByType('resource').forEach(source => {
-          console.log('performance source====>', source.name, source.responseEnd.toFixed(3));
+          console.log('performance source====>', source.name, source.responseEnd.toFixed(3), (source.responseEnd - source.requestStart).toFixed(3));
           var sourceDiv = document.createElement('div');
           sourceDiv.innerHTML = source.name + ': ' + source.responseEnd.toFixed(3);
           performanceDiv.appendChild(sourceDiv);
