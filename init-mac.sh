@@ -44,3 +44,22 @@ brew service start nginx
 # 3. 切换 Homebrew Cask 源
 # cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
 # git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
+
+echo "
+┏┛ ┻━━━━━┛ ┻┓
+  ┃　　　　　　 ┃
+  ┃　　　━　　　┃
+  ┃　┳┛　  ┗┳　┃
+  ┃　　　　　　 ┃
+  ┃　　　┻　　　┃
+  ┃　　　　　　 ┃
+  ┗━┓　　　┏━━━┛
+    ┃　　　┃   神兽保佑
+    ┃　　　┃   代码无BUG！
+    ┃　　　┗━━━━━━━━━┓
+    ┃　　　　　　　    ┣┓
+    ┃　　　　         ┏┛
+    ┗━┓ ┓ ┏━━━┳ ┓ ┏━┛
+    ┃ ┫ ┫   ┃ ┫ ┫
+      ┗━┻━┛   ┗━┻━┛
+"
