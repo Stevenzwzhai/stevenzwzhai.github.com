@@ -1,3 +1,22 @@
+echo "
+┏┛ ┻━━━━━┛ ┻┓
+  ┃　　　　　　 ┃
+  ┃　　　━　　　┃
+  ┃　┳┛　  ┗┳　┃
+  ┃　　　　　　 ┃
+  ┃　　　┻　　　┃
+  ┃　　　　　　 ┃
+  ┗━┓　　　┏━━━┛
+    ┃　　　┃   神兽保佑
+    ┃　　　┃   代码无BUG！
+    ┃　　　┗━━━━━━━━━┓
+    ┃　　　　　　　    ┣┓
+    ┃　　　　         ┏┛
+    ┗━┓ ┓ ┏━━━┳ ┓ ┏━┛
+    ┃ ┫ ┫   ┃ ┫ ┫
+      ┗━┻━┛   ┗━┻━┛
+"
+
 # 安装nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
@@ -45,21 +64,4 @@ brew service start nginx
 # cd "$(brew --repo)"/Library/Taps/homebrew/homebrew-cask
 # git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 
-echo "
-┏┛ ┻━━━━━┛ ┻┓
-  ┃　　　　　　 ┃
-  ┃　　　━　　　┃
-  ┃　┳┛　  ┗┳　┃
-  ┃　　　　　　 ┃
-  ┃　　　┻　　　┃
-  ┃　　　　　　 ┃
-  ┗━┓　　　┏━━━┛
-    ┃　　　┃   神兽保佑
-    ┃　　　┃   代码无BUG！
-    ┃　　　┗━━━━━━━━━┓
-    ┃　　　　　　　    ┣┓
-    ┃　　　　         ┏┛
-    ┗━┓ ┓ ┏━━━┳ ┓ ┏━┛
-    ┃ ┫ ┫   ┃ ┫ ┫
-      ┗━┻━┛   ┗━┻━┛
-"
+
