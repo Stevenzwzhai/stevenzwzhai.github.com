@@ -53,6 +53,8 @@ brew install nginx
 brew service start nginx
 
 # webstorm 激活 https://www.jianshu.com/p/b91942596c02
+# source ~/.bash_profile
+# alias ws="/usr/local/bin/webstorm"
 # isparta
 # 替换 Homebrew 源
 # $ cd "$(brew --repo)"
